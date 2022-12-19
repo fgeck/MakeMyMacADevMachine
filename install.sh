@@ -28,10 +28,8 @@ cp -f .p10k.zsh $HOME/.p10k.zsh
 
 ## CLI Tools, languages...
 brew install golang golangci-lint python pyenv openjdk hub ffmpeg lame nmap \
-            openssl tree vim wget jq fzf tldr tmux thefuck ranger mtr htop \
-            mas kubernetes-cli int128/kubelogin/kubelogin kubectx helm \
-            awscli azure-cli cloudfoundry/tap/cf-cli@7 vault kustomize \
-            kubebuilder watch youtube-dl prometheus secretive
+            openssl tree vim wget jq yq fzf tldr tmux thefuck ranger mtr \
+            htop kubernetes-cli kubectx helm awscli watch youtube-dl secretive
 
 # krew
 (
@@ -54,11 +52,11 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
 export NVM_DIR="$HOME/.nvm" && [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" && nvm install node
 
 ## Dev tools
-brew install --cask iterm2 docker docker-machine goland visual-studio-code postman
+brew install --cask iterm2 docker docker-machine intellij-idea-ce visual-studio-code postman
 ## Statusbar tools
 brew install --cask hiddenbar stats rectangle alt-tab itsycal
 ## Programms
-brew install --cask vlc signal telegram firefox google-chrome discord slack bitwarden
+brew install --cask vlc signal telegram firefox google-chrome discord bitwarden
 
 ## Paswordmanager
 brew tap amar1729/formulae
