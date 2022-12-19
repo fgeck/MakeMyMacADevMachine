@@ -52,7 +52,7 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
 export NVM_DIR="$HOME/.nvm" && [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" && nvm install node
 
 ## Dev tools
-brew install --cask iterm2 docker docker-machine intellij-idea-ce visual-studio-code postman
+brew install --cask iterm2 docker intellij-idea-ce visual-studio-code postman
 ## Statusbar tools
 brew install --cask hiddenbar stats rectangle alt-tab itsycal
 ## Programms
