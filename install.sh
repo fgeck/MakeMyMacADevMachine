@@ -58,14 +58,6 @@ brew install --cask hiddenbar stats rectangle alt-tab itsycal
 ## Programms
 brew install --cask vlc signal telegram firefox google-chrome discord bitwarden
 
-## Paswordmanager
-brew tap amar1729/formulae
-brew install coreutils gnu-sed gnupg browserpass pass pinentry pinentry-mac
-PREFIX='/usr/local/opt/browserpass' make hosts-chrome-user -f '/usr/local/opt/browserpass/lib/browserpass/Makefile'
-PREFIX='/usr/local/opt/browserpass' make hosts-firefox-user -f '/usr/local/opt/browserpass/lib/browserpass/Makefile'
-sudo echo "pinentry-program $(echo $(which pinentry-mac))" > ~/.gnupg/gpg-agent.conf
-gpgconf --kill gpg-agent
-
 # configure vs code
 code --install-extension akamud.vscode-theme-onedark
 code --install-extension ban.spellright
