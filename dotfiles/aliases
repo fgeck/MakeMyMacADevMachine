@@ -9,19 +9,41 @@ alias drma='docker rm -f $(docker ps -q -a)'
 
 # K8s
 alias k='kubectl'
+alias kg='kubectl get'
+alias kd='kubectl describe'
+alias kl='kubectl logs -f'
+alias kgp='kubectl get pods'
+alias kdp='kubectl describe pod'
+alias kdj='kubectl describe jobs.batch'
+alias kgj='kubectl get jobs.batch'
+alias kdcj='kubectl describe cronjobs.batch'
+alias kgcj='kubectl get cronjobs.batch'
+alias kgb='kubectl get backups'
+alias kgbo='kubectl get backups -o yaml -w'
+alias kgh='kubectl get hanas'
+alias kghs='kubectl get hanaservices'
+alias kgho='kubectl get hanas -o yaml -w '
+alias kghso='kubectl get hanaservices -o yaml -w '
+alias kl='kubectl logs -f '
+alias ktx='kubectx'
+
+cddev() {
+	cd $HOME/Develop/
+}
+
 
 # Git aliases - based on http://www.catonmat.net/blog/git-aliases/
 alias g=git
+alias gpl='git pull'
 alias ga='git add'
 alias gl="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n'' %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all"
-alias glg='git log --decorate --pretty=oneline --abbrev-commit'
+alias glg="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n'' %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all"
 alias gfu='git fetch upstream; git checkout -B master origin/master'
 alias gs='git status'
 alias gd='git diff'
 alias gdw='git diff --color-words'
 alias gdt='git difftool'
 alias gra='git remote add'
-alias gdc='git diff --cached'
 alias gc='git commit'
 alias gca='git commit --amend'
 alias gb='git branch'
@@ -33,10 +55,27 @@ alias gfom='git fetch origin; git checkout -B master origin/master'
 alias gprbom='git pull --rebase origin master'
 alias grbom='git rebase origin/master'
 alias grbiom='git rebase -i origin/master'
-
 alias gcms="git commit -m"
 alias gp="git push"
-alias gpl="git pull"
+
+
+pushit() {
+	gau
+	gcms $1
+	gp
+	echo ""
+	echo -e "\e[31mStatus after git push: \e[0m"
+	echo ""
+	gst
+}
+
+goclean() {
+	 go mod tidy;
+	 go fmt;
+	 go vet;
+}
+
+alias lg1="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
 
 alias o='open' # 'open' files from the commandline
 
