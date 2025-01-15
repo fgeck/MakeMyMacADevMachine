@@ -1,4 +1,7 @@
-alias ll='ls -lh'
+alias l='eza --icons --group-directories-first -l'
+alias ll='eza --icons --group-directories-first -l'
+alias ls='eza --icons --group-directories-first'
+alias cat='bat'
 alias la='ls -lah'
 alias lh=la
 
@@ -10,6 +13,11 @@ alias drma='docker rm -f $(docker ps -q -a)'
 # K8s
 alias k='kubectl'
 alias kg='kubectl get'
+alias kgpo='kubectl get pods -o yaml'
+alias kgdplo='kubectl get deployments -o yaml'
+alias kgpvo='kubectl get pv -o yaml'
+alias kgpvco='kubectl get pvc -o yaml'
+alias kgo='kubectl get -o yaml'
 alias kd='kubectl describe'
 alias kl='kubectl logs -f'
 alias kgp='kubectl get pods'
@@ -28,9 +36,8 @@ alias kl='kubectl logs -f '
 alias ktx='kubectx'
 
 cddev() {
-	cd $HOME/Develop/
+	cd $HOME/Develop/github.com/
 }
-
 
 # Git aliases - based on http://www.catonmat.net/blog/git-aliases/
 alias g=git
@@ -58,7 +65,6 @@ alias grbiom='git rebase -i origin/master'
 alias gcms="git commit -m"
 alias gp="git push"
 
-
 pushit() {
 	gau
 	gcms $1
@@ -69,10 +75,19 @@ pushit() {
 	gst
 }
 
+pr() {
+    commit_message=$1
+    current_branch=$(git rev-parse --abbrev-ref HEAD)
+    
+    gcms $1
+    gp -u origin $current_branch
+    pipepr
+}
+
 goclean() {
 	 go mod tidy;
-	 go fmt;
-	 go vet;
+	 go fmt $(go list -find ./... | grep -v internal/SAP/go-hdb/);
+	 go vet $(go list -find ./... | grep -v internal/SAP/go-hdb/);
 }
 
 alias lg1="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
