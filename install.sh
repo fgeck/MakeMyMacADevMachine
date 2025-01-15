@@ -29,7 +29,7 @@ cp -f .p10k.zsh $HOME/.p10k.zsh
 ## CLI Tools, languages...
 brew install golang golangci-lint python pyenv openjdk hub ffmpeg lame nmap \
             openssl tree vim wget jq yq fzf tldr tmux thefuck ranger mtr \
-            htop kubernetes-cli kubectx helm awscli watch youtube-dl secretive
+            htop kubernetes-cli kubectx helm awscli watch zoxide bat \
 
 # krew
 (
@@ -56,21 +56,8 @@ brew install --cask iterm2 docker intellij-idea-ce visual-studio-code postman
 ## Statusbar tools
 brew install --cask hiddenbar stats rectangle alt-tab itsycal
 ## Programms
-brew install --cask vlc signal telegram firefox google-chrome discord bitwarden
+brew install --cask vlc signal telegram firefox google-chrome bitwarden
 
-# configure vs code
-code --install-extension akamud.vscode-theme-onedark
-code --install-extension ban.spellright
-code --install-extension DavidAnson.vscode-markdownlint
-code --install-extension donjayamanne.githistory
-code --install-extension esbenp.prettier-vscode
-code --install-extension ms-python.python
-code --install-extension ms-vscode.Go
-code --install-extension PKief.material-icon-theme
-code --install-extension redhat.java
-code --install-extension redhat.vscode-yaml
-code --install-extension techer.open-in-browser
-code --install-extension ziyasal.vscode-open-in-github
 
 ### osx configs
 # Show Library
