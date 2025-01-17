@@ -1,3 +1,5 @@
+#!/bin/bash
+
 alias l='eza --icons --group-directories-first -l'
 alias ll='eza --icons --group-directories-first -l'
 alias ls='eza --icons --group-directories-first'
@@ -73,15 +75,6 @@ pushit() {
 	echo -e "\e[31mStatus after git push: \e[0m"
 	echo ""
 	gst
-}
-
-pr() {
-    commit_message=$1
-    current_branch=$(git rev-parse --abbrev-ref HEAD)
-    
-    gcms $1
-    gp -u origin $current_branch
-    pipepr
 }
 
 goclean() {
