@@ -93,6 +93,7 @@ for pkg in "${(@k)CLOUD_NETWORK_TOOLS}"; do
 done
 
 kubectl krew install tree edit-status
+helm plugin install https://github.com/databus23/helm-diff
 
 
 # --- Dev tools ---
