@@ -4,7 +4,7 @@
 cp -f dotfiles/.zshrc "$HOME"/.zshrc
 mkdir -p "$HOME"/.dotfiles "$HOME"/.age "$HOME"/.ssh
 cp -f dotfiles/aliases "$HOME"/.dotfiles/
-cp -f .p10k.zsh "$HOME"/.p10k.zsh
+cp -f dotfiles/.p10k.zsh "$HOME"/.p10k.zsh
 
 # --- Brew ---
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -22,12 +22,13 @@ sh -c "RUNZSH=no; $(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh
 # Do not forget to change fonts: 
 # iTerm → Preferences → Profiles → Text → Change Font -> MesloLGS NF
 brew install \
-  font-hack-nerd-font \
   powerlevel10k \
   zsh-autosuggestions \
   zsh-syntax-highlighting \
   jandedobbeleer/oh-my-posh/oh-my-posh
-brew install --cask font-meslo-lg-nerd-font
+brew install --cask \
+  font-meslo-lg-nerd-font \
+  font-hack-nerd-font
 git clone https://github.com/romkatv/zsh-defer.git "$HOME"/zsh-defer
 
 # --- Languages ---
@@ -42,58 +43,61 @@ nvm install node
 # maven has to be installed after java
 brew install maven gradle
 
-
-# -- Usefule cli tools ---
-typeset -A CLI_TOOLS_PACKAGES
+# -- Usefule cli tools --
+declare -A CLI_TOOLS_PACKAGES
 CLI_TOOLS_PACKAGES=(
-  hub "GitHub CLI: https://hub.github.com/"
-  tree "Directory tree viewer"
-  vim "Text editor"
-  wget "Network downloader"
-  jq "JSON processor: https://stedolan.github.io/jq/"
-  yq "YAML processor: https://github.com/mikefarah/yq"
-  fzf "Fuzzy finder: https://github.com/junegunn/fzf"
-  tldr "Simplified man pages: https://tldr.sh/"
-  tmux "Terminal multiplexer"
-  thefuck "Correct mistyped commands: https://github.com/nvbn/thefuck"
-  ranger "Terminal file manager: https://ranger.github.io/"
-  htop "Interactive process viewer"
-  watch "Run commands periodically"
-  zoxide "Smarter 'cd': https://github.com/ajeetdsouza/zoxide"
-  bat "Better 'cat': https://github.com/sharkdp/bat"
-  go-task "Task runner: https://taskfile.dev/"
-  bitwarden-cli "CLI for Bitwarden password manager"
-  koekeishiya/formulae/skhd "https://github.com/koekeishiya/skhd  simple hotkey daemon for macOS"
+  [hub]="GitHub CLI: https://hub.github.com/"
+  [tree]="Directory tree viewer"
+  [vim]="Text editor"
+  [wget]="Network downloader"
+  [jq]="JSON processor: https://stedolan.github.io/jq/"
+  [yq]="YAML processor: https://github.com/mikefarah/yq"
+  [fzf]="Fuzzy finder: https://github.com/junegunn/fzf"
+  [tldr]="Simplified man pages: https://tldr.sh/"
+  [tmux]="Terminal multiplexer"
+  [thefuck]="Correct mistyped commands: https://github.com/nvbn/thefuck"
+  [ranger]="Terminal file manager: https://ranger.github.io/"
+  [htop]="Interactive process viewer"
+  [watch]="Run commands periodically"
+  [zoxide]="Smarter 'cd': https://github.com/ajeetdsouza/zoxide"
+  [bat]="Better 'cat': https://github.com/sharkdp/bat"
+  [go-task]="Task runner: https://taskfile.dev/"
+  [bitwarden-cli]="CLI for Bitwarden password manager"
+  [koekeishiya/formulae/skhd]="(MacOS only) skhd is a simple hotkey daemon for macOS: https://github.com/koekeishiya/skhd"
+  [koekeishiya/formulae/yabai]="(MacOS only) yabai is a window management utility: https://github.com/koekeishiya/yabai - need to disable system integrity protection: https://github.com/koekeishiya/yabai/wiki/Disabling-System-Integrity-Protection"
 )
-for pkg in "${(@k)CLI_TOOLS_PACKAGES}"; do
+for pkg in "${!CLI_TOOLS_PACKAGES[@]}"; do
   echo "Installing $pkg - ${CLI_TOOLS_PACKAGES[$pkg]}"
   brew install "$pkg"
 done
 
-typeset -A CLOUD_NETWORK_TOOLS
+# -- Cloud and Network cli tools --
+declare -A CLOUD_NETWORK_TOOLS
 CLOUD_NETWORK_TOOLS=(
-  kubernetes-cli "Kubernetes CLI: https://kubernetes.io/docs/reference/kubectl/"
-  kubectx "Kubernetes context switcher"
-  krew "kubectl plugin manager: https://krew.sigs.k8s.io/"
-  helm "Kubernetes package manager: https://helm.sh/"
-  helmfile "Declarative Helm management"
-  fluxcd/tap/flux "GitOps tool: https://fluxcd.io/"
-  sops "Secrets management: https://github.com/mozilla/sops"
-  awscli "AWS CLI"
-  openssl "SSL/TLS toolkit"
-  mtr "Network diagnostics tool"
-  nmap "Network scanner: https://nmap.org/"
-  arping "ARP ping tool"
-  mitmproxy "Intercepting proxy: https://mitmproxy.org/"
-  gobuster "Directory/file brute-forcer: https://github.com/OJ/gobuster"
+  [kubernetes-cli]="Kubernetes CLI: https://kubernetes.io/docs/reference/kubectl/"
+  [kubectx]="Kubernetes context switcher"
+  [krew]="kubectl plugin manager: https://krew.sigs.k8s.io/"
+  [helm]="Kubernetes package manager: https://helm.sh/"
+  [helmfile]="Declarative Helm management"
+  [fluxcd/tap/flux]="GitOps tool: https://fluxcd.io/"
+  [sops]="Secrets management: https://github.com/mozilla/sops"
+  [awscli]="AWS CLI"
+  [openssl]="SSL/TLS toolkit"
+  [mtr]="Network diagnostics tool"
+  [nmap]="Network scanner: https://nmap.org/"
+  [arping]="ARP ping tool"
+  [mitmproxy]="Intercepting proxy: https://mitmproxy.org/"
+  [gobuster]="Directory/file brute-forcer: https://github.com/OJ/gobuster"
 )
 # Install each package with description
-for pkg in "${(@k)CLOUD_NETWORK_TOOLS}"; do
+for pkg in "${!CLOUD_NETWORK_TOOLS[@]}"; do
   echo "Installing $pkg - ${CLOUD_NETWORK_TOOLS[$pkg]}"
   brew install "$pkg"
 done
 
+# Install kubectl plugins
 kubectl krew install tree edit-status
+# Install Helm plugin
 helm plugin install https://github.com/databus23/helm-diff
 
 
