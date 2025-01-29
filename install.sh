@@ -59,6 +59,12 @@ CLI_TOOLS_PACKAGES=(
   [ranger]="Terminal file manager: https://ranger.github.io/"
   [htop]="Interactive process viewer"
   [watch]="Run commands periodically"
+  [gnu-sed]="GNU sed: A powerful stream editor for filtering and transforming text: https://www.gnu.org/software/sed/"
+  [gum]="Gum: A tool for creating beautiful interactive shell scripts: https://github.com/charmbracelet/gum"
+  [age]="Age: A simple, modern, and secure file encryption tool: https://github.com/FiloSottile/age"
+  [eza]="Eza: A modern replacement for 'ls' with more features and better defaults: https://github.com/eza-community/eza"
+  [rclone]="Rclone: A command-line program to manage files on cloud storage: https://github.com/rclone/rclone"
+  [rubberband]="Rubberband: A tool for audio time-stretching and pitch-shifting: https://github.com/breakfastquay/rubberband"
   [zoxide]="Smarter 'cd': https://github.com/ajeetdsouza/zoxide"
   [bat]="Better 'cat': https://github.com/sharkdp/bat"
   [go-task]="Task runner: https://taskfile.dev/"
@@ -77,15 +83,17 @@ CLOUD_NETWORK_TOOLS=(
   [kubernetes-cli]="Kubernetes CLI: https://kubernetes.io/docs/reference/kubectl/"
   [kubectx]="Kubernetes context switcher"
   [krew]="kubectl plugin manager: https://krew.sigs.k8s.io/"
+  [kustomize]="kustomize lets you customize raw, template-free YAML files for multiple purposes, leaving the original YAML untouched and usable as is: https://github.com/kubernetes-sigs/kustomize"
   [helm]="Kubernetes package manager: https://helm.sh/"
   [helmfile]="Declarative Helm management"
   [fluxcd/tap/flux]="GitOps tool: https://fluxcd.io/"
   [sops]="Secrets management: https://github.com/mozilla/sops"
-  [awscli]="AWS CLI"
-  [openssl]="SSL/TLS toolkit"
-  [mtr]="Network diagnostics tool"
+  [talosctl]="Talos CLI: A command-line tool for managing Talos Linux, a Kubernetes-focused OS - https://github.com/siderolabs/talos"
+  [awscli]="AWS CLI: A unified tool to manage AWS services from the command line - https://github.com/aws/aws-cli"
+  [openssl]="SSL/TLS toolkit: A robust, full-featured toolkit for SSL/TLS and general cryptography - https://www.openssl.org/"
+  [mtr]="Network diagnostics tool: Combines 'ping' and 'traceroute' for network troubleshooting - https://github.com/traviscross/mtr"
+  [arping]="ARP ping tool: A utility to send ARP requests to check for duplicate IP addresses - https://github.com/ThomasHabets/arping"
   [nmap]="Network scanner: https://nmap.org/"
-  [arping]="ARP ping tool"
   [mitmproxy]="Intercepting proxy: https://mitmproxy.org/"
   [gobuster]="Directory/file brute-forcer: https://github.com/OJ/gobuster"
 )
@@ -104,9 +112,9 @@ helm plugin install https://github.com/databus23/helm-diff
 # --- Dev tools ---
 brew install --cask iterm2 docker utm intellij-idea-ce visual-studio-code bruno
 # ---Statusbar tools ---
-brew install --cask hiddenbar stats rectangle alt-tab itsycal
+brew install --cask jordanbaird-ice stats rectangle alt-tab itsycal caffeine maccy
 # --- Other Programms ---
-brew install --cask vlc signal telegram firefox google-chrome bitwarden
+brew install --cask vlc signal telegram firefox google-chrome bitwarden aldente pearcleaner
 
 # --- OSX configs ---
 # Show Library

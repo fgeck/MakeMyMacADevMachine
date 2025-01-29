@@ -79,8 +79,8 @@ pushit() {
 
 goclean() {
 	 go mod tidy;
-	 go fmt $(go list -find ./... | grep -v internal/SAP/go-hdb/);
-	 go vet $(go list -find ./... | grep -v internal/SAP/go-hdb/);
+	 go fmt $(go list -find ./...);
+	 go vet $(go list -find ./...);
 }
 
 alias lg1="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
