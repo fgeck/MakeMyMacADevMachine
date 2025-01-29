@@ -63,6 +63,7 @@ CLI_TOOLS_PACKAGES=(
   bat "Better 'cat': https://github.com/sharkdp/bat"
   go-task "Task runner: https://taskfile.dev/"
   bitwarden-cli "CLI for Bitwarden password manager"
+  koekeishiya/formulae/skhd "https://github.com/koekeishiya/skhd  simple hotkey daemon for macOS"
 )
 for pkg in "${(@k)CLI_TOOLS_PACKAGES}"; do
   echo "Installing $pkg - ${CLI_TOOLS_PACKAGES[$pkg]}"
