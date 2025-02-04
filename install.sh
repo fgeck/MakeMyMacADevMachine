@@ -112,7 +112,7 @@ helm plugin install https://github.com/databus23/helm-diff
 # --- Dev tools ---
 brew install --cask iterm2 docker utm intellij-idea-ce visual-studio-code bruno
 # ---Statusbar tools ---
-brew install --cask jordanbaird-ice stats rectangle alt-tab itsycal keepingyouawake clipy
+brew install --cask jordanbaird-ice stats alt-tab itsycal keepingyouawake clipy karabiner-elements
 # --- Other Programms ---
 brew install --cask vlc signal telegram firefox google-chrome bitwarden aldente pearcleaner raycast
 
