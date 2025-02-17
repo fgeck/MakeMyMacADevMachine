@@ -1,4 +1,9 @@
-#!/bin/baszsh
+#!/bin/bash
+
+# --- Install US with German Umlauts ---
+curl -sL https://api.github.com/repos/patrick-zippenfenig/us-with-german-umlauts/tarball/master | sudo tar xz --exclude=README.md --strip=1 -C /Library/Keyboard\ Layouts/
+echo "Open System Preferences -> Keyboard -> Input Sources"
+echo "Add U.S. with German Umlauts (category English) (Note: If the keyboard is not displayed, you may have to restart your device)"
 
 # --- Copy dotfiles for zsh ---
 cp -f dotfiles/.zshrc "$HOME"/.zshrc
@@ -69,8 +74,7 @@ CLI_TOOLS_PACKAGES=(
   [bat]="Better 'cat': https://github.com/sharkdp/bat"
   [go-task]="Task runner: https://taskfile.dev/"
   [bitwarden-cli]="CLI for Bitwarden password manager"
-  [koekeishiya/formulae/skhd]="(MacOS only) skhd is a simple hotkey daemon for macOS: https://github.com/koekeishiya/skhd"
-  [koekeishiya/formulae/yabai]="(MacOS only) yabai is a window management utility: https://github.com/koekeishiya/yabai - need to disable system integrity protection: https://github.com/koekeishiya/yabai/wiki/Disabling-System-Integrity-Protection"
+  [jesseduffield/lazygit/lazygit]="Terminal UI for git https://github.com/jesseduffield/lazygit"
 )
 for pkg in "${!CLI_TOOLS_PACKAGES[@]}"; do
   echo "Installing $pkg - ${CLI_TOOLS_PACKAGES[$pkg]}"
@@ -84,6 +88,7 @@ CLOUD_NETWORK_TOOLS=(
   [kubectx]="Kubernetes context switcher"
   [krew]="kubectl plugin manager: https://krew.sigs.k8s.io/"
   [kustomize]="kustomize lets you customize raw, template-free YAML files for multiple purposes, leaving the original YAML untouched and usable as is: https://github.com/kubernetes-sigs/kustomize"
+  [k9s]="K9s is a terminal based UI to interact with your Kubernetes clusters: https://k9scli.io/"
   [helm]="Kubernetes package manager: https://helm.sh/"
   [helmfile]="Declarative Helm management"
   [fluxcd/tap/flux]="GitOps tool: https://fluxcd.io/"
@@ -96,6 +101,7 @@ CLOUD_NETWORK_TOOLS=(
   [nmap]="Network scanner: https://nmap.org/"
   [mitmproxy]="Intercepting proxy: https://mitmproxy.org/"
   [gobuster]="Directory/file brute-forcer: https://github.com/OJ/gobuster"
+  [wireguard-tools]="Open Source VPN: https://www.wireguard.com/"
 )
 # Install each package with description
 for pkg in "${!CLOUD_NETWORK_TOOLS[@]}"; do
@@ -114,7 +120,7 @@ brew install --cask iterm2 docker utm intellij-idea-ce visual-studio-code bruno
 # ---Statusbar tools ---
 brew install --cask jordanbaird-ice stats alt-tab itsycal keepingyouawake clipy karabiner-elements
 # --- Other Programms ---
-brew install --cask vlc signal telegram firefox google-chrome bitwarden aldente pearcleaner raycast
+brew install --cask vlc signal telegram firefox google-chrome zen-browser bitwarden aldente pearcleaner raycast
 
 # --- OSX configs ---
 # Show Library
