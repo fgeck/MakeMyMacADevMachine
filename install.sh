@@ -122,6 +122,9 @@ brew install --cask jordanbaird-ice stats alt-tab itsycal keepingyouawake clipy 
 # --- Other Programms ---
 brew install --cask vlc signal telegram firefox google-chrome zen-browser bitwarden aldente pearcleaner raycast
 
+# Mac with german umlauts keyboard
+curl -sL https://api.github.com/repos/patrick-zippenfenig/us-with-german-umlauts/tarball/master | sudo tar xz --exclude=README.md --strip=1 -C /Library/Keyboard\ Layouts/
+
 # --- OSX configs ---
 # Show Library
 chflags nohidden ~/Library
@@ -131,6 +134,10 @@ defaults write com.apple.finder AppleShowAllFiles YES
 defaults write com.apple.finder ShowPathbar -bool true
 # Show status Bar
 defaults write com.apple.finder ShowStatusBar -bool true
+# Dock on left and auto hide
+defaults write com.apple.dock orientation -string left
+defaults write com.apple.dock autohide -bool true
+killall Dock
 
 echo "installation done! You have to manually import the iterm2 profile"
 echo ""
