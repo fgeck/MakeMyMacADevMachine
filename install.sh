@@ -86,6 +86,7 @@ tree|Directory tree viewer|
 util-linux|Linux Utils that contain e.g. setsid|
 vim|Text editor|
 wget|Network downloader|
+postgresql|Postgres needed for psql|
 jq|JSON processor|https://stedolan.github.io/jq/
 yq|YAML processor|https://github.com/mikefarah/yq
 fzf|Fuzzy finder|https://github.com/junegunn/fzf
