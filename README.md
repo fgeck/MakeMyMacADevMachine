@@ -1,2 +1,3 @@
 # MakeMyMacADevMachine
-bash script to automate installations of developer tools
+
+Bash script to automate installations of developer tools
