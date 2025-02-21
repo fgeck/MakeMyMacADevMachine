@@ -17,7 +17,7 @@ export KUBECONFIG="$HOME/.kube/config"
 export SOPS_AGE_KEY_FILE=$HOME/.age/key.txt
 
 # ---- PATH Optimization ----
-export PATH="/opt/homebrew/opt/curl/bin:/usr/local/kubebuilder/bin:${KREW_ROOT:-$HOME/.krew}/bin:/usr/local/bin/flutter/bin:$GOPATH/bin:/opt/homebrew/bin:/opt/homebrew/opt/libpq/bin:$PATH"
+export PATH="/opt/homebrew/opt/curl/bin:/usr/local/kubebuilder/bin:${KREW_ROOT:-$HOME/.krew}/bin:/usr/local/bin/flutter/bin:$GOPATH/bin:/opt/homebrew/bin:/opt/homebrew/opt/libpq/bin:/opt/homebrew/opt/util-linux/bin:/opt/homebrew/opt/util-linux/sbin:$PATH"
 
 # ---- Oh-My-Zsh Configuration ----
 source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme

@@ -83,6 +83,7 @@ brew_install_cask() {
 read -r -d '' CLI_TOOLS_PACKAGES << EOM
 gh|GitHub CLI|https://cli.github.com/
 tree|Directory tree viewer|
+util-linux|Linux Utils that contain e.g. setsid|
 vim|Text editor|
 wget|Network downloader|
 jq|JSON processor|https://stedolan.github.io/jq/
