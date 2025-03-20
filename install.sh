@@ -183,6 +183,7 @@ bitwarden|Open source password manager|https://bitwarden.com/
 aldente|Battery charge limiter for MacBooks|https://github.com/davidwernhart/AlDente
 pearcleaner|App uninstaller and cleaner for Mac|https://www.pears.io/
 raycast|Productivity tool for MacOS|https://www.raycast.com/
+raspberry-pi-imager|Imager for RaspberryPi|https://www.raspberrypi.org/downloads/
 EOM
 echo "Installing Other Programs..."
 echo "$OTHER_APPS" | while IFS='|' read -r name description url; do
