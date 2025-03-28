@@ -158,7 +158,7 @@ brew_install_cask "$name" "$description" "$url"
 
 # --- Statusbar tools ---
 read -r -d '' STATUSBAR_APPS << EOM
-jordanbaird-ice|System monitoring tool for macOS|https://github.com/jordanbaird/Ice
+jordanbaird-ice|Status Bar configuration Tool|https://github.com/jordanbaird/Ice
 stats|System monitor for macOS|https://github.com/exelban/stats
 alt-tab|Windows alt-tab on macOS|https://alt-tab-macos.netlify.app/
 itsycal|Tiny calendar for your Mac's menu bar|https://www.mowglii.com/itsycal/
